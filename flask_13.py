@@ -31,6 +31,30 @@ def about():
     return render_template('about.html')
 
 
+@app.route('/')
+def team():
+    return render_template('index.html')
+
+
+@app.route('/location')
+def location():
+    return render_template('location.html')
+
+@app.route('/ourservices')
+def service():
+    return render_template('ourservices.html')
+
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+
+@app.route('/help')
+def help():
+    return render_template('help.html')
+
+
 @app.route('/posts')
 def posts():
     articles = Article.query.order_by(Article.date.desc()).all()   #берем всея записи из базы данных
@@ -61,6 +85,7 @@ def post_update(id):
         article.title = request.form['title']
         article.intro = request.form['intro']
         article.text = request.form['text']
+
 
         try:
             db.session.commit()

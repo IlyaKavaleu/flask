@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
-
 {% block title %}
-Все статьи на сайте
+<h1></h1>
 {% endblock %}
 
 
 {% block body %}
 <div class="container mt-5">
-    <h1>Все статьи на сайте</h1>
+    <h1><img class="mb-2" src="static/pict_1.png" alt="" width="24" height="24">
+All text on the site</h1>
 
     {% if articles|length > 0 %}
         {% for element in articles %}
@@ -15,7 +15,7 @@
             <h2>{{ element.title }}</h2>
             <p>{{ element.intro }}</p>
             <p><b>Date: {{ element.date.date() }}</b></p>
-            <a href="/posts/{{ element.id }}" class="btn btn-warning">Детальнее</a>
+            <a href="/posts/{{ element.id }}" class="btn btn-warning">More</a>
         </div>
         {% endfor %}
     {% else %}
